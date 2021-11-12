@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.order.EntreeMenuFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.lunchordering.model.OrderViewModel" />
+
+        <variable
+            name="entreeFragment"
+            type="com.example.lunchordering.ui.order.EntreeMenuFragment" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/side_margin"
+            android:paddingEnd="@dimen/side_margin"
+            android:paddingBottom="@dimen/side_margin">
+
+            <RadioGroup
+                android:id="@+id/entree_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/cauliflower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItem["cauliflower"].name}'
+                    android:checked='@{viewModel.entree.name.equals(viewModel.menuItem["cauliflower"].name)}'
+                    android:onClick='@{() -> viewModel.setEntree("cauliflower")}'
+                    tools:text="Entree 1" />
+
+                <TextView
+                    android:id="@+id/cauliflower_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItem["cauliflower"].description}'
+                    tools:text="Entree 1 description" />
+
+                <TextView
+                    android:id="@+id/cauliflower_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItem["cauliflower"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cauliflower_description" />
+
+                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/chili"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItem["chili"].name}'
+                    android:checked='@{viewModel.entree.name.equals(viewModel.menuItem["chili"].name)}'
+                    tools:text="Entree 2" />
+
+                <TextView
+                    android:id="@+id/chili_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItem["chili"].description}'
+                    tools:text="Entree 2 description" />
+
+                <TextView
+                    android:id="@+id/chili_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItem["chili"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chili_description" />
+
+                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/pasta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItem["pasta"].name}'
+                    android:checked='@{viewModel.entree.name.equals(viewModel.menuItem["pasta"].name)}'
+                    android:onClick='@{() -> viewModel.setEntree("cauliflower")}'
+                    tools:text="Entree 3" />
+
+                <TextView
+                    android:id="@+id/pasta_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItem["pasta"].description}'
+                    tools:text="Entree 3 description" />
+
+                <TextView
+                    android:id="@+id/pasta_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItem["pasta"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pasta_description" />
+
+                <!-- TODO: set the entree in the view model when the RadioButton is clicked -->
+                <RadioButton
+                    android:id="@+id/skillet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:text='@{viewModel.menuItem["skillet"].name}'
+                    android:checked='@{viewModel.entree.name.equals(viewModel.menuItem["skiller"].name)}'
+                    android:onClick='@{() ->viewModel.setEntree("skiller")}'
+                    tools:text="Entree 4" />
+
+                <TextView
+                    android:id="@+id/skillet_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text='@{viewModel.menuItem["skillet"].description}'
+                    tools:text="Entree 4 description" />
+
+                <TextView
+                    android:id="@+id/skillet_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="@dimen/base_margin"
+                    android:text='@{viewModel.menuItem["skillet"].getFormattedPrice()}'
+                    tools:text="$0.00" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.LunchTray.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/base_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/entree_options" />
+
+            <!-- TODO: set the text to the current subtotal value from the view model -->
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.LunchTray.TextView.Subtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:text="@{@string/subtotal(viewModel.subtotal)}"
+                tools:text="Subtotal $5.00"/>
+
+            <!-- TODO: cancel the order when clicked -->
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.Order.Button.Cancel"
+                android:onClick="@{()->entreeFragment.cancelOrder()}"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <!-- TODO: go to the next screen when clicked -->
+            <Button
+                android:id="@+id/next_button"
+                style="@style/Widget.Order.Button.Next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="@{()->entreeFragment.goToNextScreen()}"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
